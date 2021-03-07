@@ -21,6 +21,8 @@
 		F98884A725F56D360049A059 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884A625F56D360049A059 /* ImageSelectorController.swift */; };
 		F98884AC25F56D450049A059 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884AB25F56D450049A059 /* NotificationController.swift */; };
 		F98884B125F56D500049A059 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884B025F56D500049A059 /* ProfileController.swift */; };
+		F98884C225F57D420049A059 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884C125F57D420049A059 /* TimelineCell.swift */; };
+		F98884C725F57E3D0049A059 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884C625F57E3D0049A059 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		F98884A625F56D360049A059 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		F98884AB25F56D450049A059 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		F98884B025F56D500049A059 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		F98884C125F57D420049A059 /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		F98884C625F57E3D0049A059 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		F988848F25F562620049A059 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F98884C625F57E3D0049A059 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 		F988849525F562A90049A059 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F98884C125F57D420049A059 /* TimelineCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,12 +332,14 @@
 			files = (
 				F988846125F55ED50049A059 /* ViewController.swift in Sources */,
 				F98884A725F56D360049A059 /* ImageSelectorController.swift in Sources */,
+				F98884C225F57D420049A059 /* TimelineCell.swift in Sources */,
 				F98884AC25F56D450049A059 /* NotificationController.swift in Sources */,
 				F98884A225F56D240049A059 /* SearchController.swift in Sources */,
 				F988845D25F55ED50049A059 /* AppDelegate.swift in Sources */,
 				F98884B125F56D500049A059 /* ProfileController.swift in Sources */,
 				F988849825F563E80049A059 /* MainTabController.swift in Sources */,
 				F988845F25F55ED50049A059 /* SceneDelegate.swift in Sources */,
+				F98884C725F57E3D0049A059 /* Extensions.swift in Sources */,
 				F988849D25F56D160049A059 /* TimelineController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C99MXG5L9J;
 				INFOPLIST_FILE = instagram_mvvm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,6 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C99MXG5L9J;
 				INFOPLIST_FILE = instagram_mvvm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
