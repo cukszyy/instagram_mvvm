@@ -13,10 +13,11 @@ class MainTabController: UITabBarController {
     // MARK - Helpers
     
     func configViewControllers() {
+        let layout = UICollectionViewFlowLayout()
         let timeline = templateNavigationController(
             unselectedImage: #imageLiteral(resourceName: "home_unselected"),
             selectedImage: #imageLiteral(resourceName: "home_selected"),
-            rootViewController: TimelineController()
+            rootViewController: TimelineController(collectionViewLayout: layout)
         )
         
         let search = templateNavigationController(
