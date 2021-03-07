@@ -15,6 +15,12 @@
 		F988846925F55ED60049A059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F988846725F55ED60049A059 /* LaunchScreen.storyboard */; };
 		F988847425F55ED70049A059 /* instagram_mvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988847325F55ED70049A059 /* instagram_mvvmTests.swift */; };
 		F988847F25F55ED70049A059 /* instagram_mvvmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988847E25F55ED70049A059 /* instagram_mvvmUITests.swift */; };
+		F988849825F563E80049A059 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988849725F563E80049A059 /* MainTabController.swift */; };
+		F988849D25F56D160049A059 /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988849C25F56D160049A059 /* TimelineController.swift */; };
+		F98884A225F56D240049A059 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884A125F56D240049A059 /* SearchController.swift */; };
+		F98884A725F56D360049A059 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884A625F56D360049A059 /* ImageSelectorController.swift */; };
+		F98884AC25F56D450049A059 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884AB25F56D450049A059 /* NotificationController.swift */; };
+		F98884B125F56D500049A059 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884B025F56D500049A059 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		F988847A25F55ED70049A059 /* instagram_mvvmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instagram_mvvmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988847E25F55ED70049A059 /* instagram_mvvmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagram_mvvmUITests.swift; sourceTree = "<group>"; };
 		F988848025F55ED70049A059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F988849725F563E80049A059 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		F988849C25F56D160049A059 /* TimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
+		F98884A125F56D240049A059 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		F98884A625F56D360049A059 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		F98884AB25F56D450049A059 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F98884B025F56D500049A059 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,12 @@
 		F988845B25F55ED50049A059 /* instagram_mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				F988849625F562AB0049A059 /* Model */,
+				F988849525F562A90049A059 /* View */,
+				F988849425F562A80049A059 /* ViewModel */,
+				F988849325F562A60049A059 /* Controller */,
+				F988849025F562890049A059 /* API */,
+				F988848F25F562620049A059 /* Utils */,
 				F988845C25F55ED50049A059 /* AppDelegate.swift */,
 				F988845E25F55ED50049A059 /* SceneDelegate.swift */,
 				F988846025F55ED50049A059 /* ViewController.swift */,
@@ -126,6 +144,54 @@
 				F988848025F55ED70049A059 /* Info.plist */,
 			);
 			path = instagram_mvvmUITests;
+			sourceTree = "<group>";
+		};
+		F988848F25F562620049A059 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F988849025F562890049A059 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F988849325F562A60049A059 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F988849725F563E80049A059 /* MainTabController.swift */,
+				F988849C25F56D160049A059 /* TimelineController.swift */,
+				F98884A125F56D240049A059 /* SearchController.swift */,
+				F98884A625F56D360049A059 /* ImageSelectorController.swift */,
+				F98884AB25F56D450049A059 /* NotificationController.swift */,
+				F98884B025F56D500049A059 /* ProfileController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F988849425F562A80049A059 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F988849525F562A90049A059 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F988849625F562AB0049A059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F988846125F55ED50049A059 /* ViewController.swift in Sources */,
+				F98884A725F56D360049A059 /* ImageSelectorController.swift in Sources */,
+				F98884AC25F56D450049A059 /* NotificationController.swift in Sources */,
+				F98884A225F56D240049A059 /* SearchController.swift in Sources */,
 				F988845D25F55ED50049A059 /* AppDelegate.swift in Sources */,
+				F98884B125F56D500049A059 /* ProfileController.swift in Sources */,
+				F988849825F563E80049A059 /* MainTabController.swift in Sources */,
 				F988845F25F55ED50049A059 /* SceneDelegate.swift in Sources */,
+				F988849D25F56D160049A059 /* TimelineController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
