@@ -22,12 +22,7 @@ class LoginController: UIViewController {
     
     private let loginBtn: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Log In", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setHeight(50)
+        button.configAuthenticationButton(title: "Log In")
         return button
     }()
     
@@ -40,26 +35,25 @@ class LoginController: UIViewController {
     private let signUpBtn: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Don't have an account?  ", secondPart: "Sign Up")
+        button.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         return button
     }()
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
     }
     
     // MARK: - Helpers
+    
     func configUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
         
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
+        configureGradientLayer()
         
         view.addSubview(iconImage)
         iconImage.centerX(inView: view)
@@ -83,5 +77,12 @@ class LoginController: UIViewController {
         view.addSubview(signUpBtn)
         signUpBtn.centerX(inView: view)
         signUpBtn.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    // MARK: - Action
+    
+    @objc func didTapSignUp() {
+        let signUpController = SignUpController()
+        navigationController?.pushViewController(signUpController, animated: true)
     }
 }

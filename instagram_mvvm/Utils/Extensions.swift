@@ -49,6 +49,15 @@ extension UIButton {
         attributedTitle.append(NSAttributedString(string: secondPart, attributes: boldAtts))
         setAttributedTitle(attributedTitle, for: .normal)
     }
+    
+    func configAuthenticationButton(title titleString: String) {
+        setTitle(titleString, for: .normal)
+        setTitleColor(.white, for: .normal)
+        backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        layer.cornerRadius = 5
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        setHeight(50)
+    }
 }
 
 // MARK: - UIView Extensions
