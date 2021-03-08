@@ -23,6 +23,9 @@
 		F98884B125F56D500049A059 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884B025F56D500049A059 /* ProfileController.swift */; };
 		F98884C225F57D420049A059 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884C125F57D420049A059 /* TimelineCell.swift */; };
 		F98884C725F57E3D0049A059 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884C625F57E3D0049A059 /* Extensions.swift */; };
+		F98884D925F59D2D0049A059 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884D825F59D2D0049A059 /* LoginController.swift */; };
+		F98884E125F59D410049A059 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884E025F59D410049A059 /* SignUpController.swift */; };
+		F98884E625F5A5F60049A059 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98884E525F5A5F60049A059 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		F98884B025F56D500049A059 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		F98884C125F57D420049A059 /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		F98884C625F57E3D0049A059 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F98884D825F59D2D0049A059 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F98884E025F59D410049A059 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		F98884E525F5A5F60049A059 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,7 @@
 		F988849325F562A60049A059 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F98884D725F59D1F0049A059 /* Authentication */,
 				F988849725F563E80049A059 /* MainTabController.swift */,
 				F988849C25F56D160049A059 /* TimelineController.swift */,
 				F98884A125F56D240049A059 /* SearchController.swift */,
@@ -189,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F98884C125F57D420049A059 /* TimelineCell.swift */,
+				F98884E525F5A5F60049A059 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +206,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F98884D725F59D1F0049A059 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F98884D825F59D2D0049A059 /* LoginController.swift */,
+				F98884E025F59D410049A059 /* SignUpController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +347,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98884E625F5A5F60049A059 /* CustomTextField.swift in Sources */,
+				F98884E125F59D410049A059 /* SignUpController.swift in Sources */,
 				F988846125F55ED50049A059 /* ViewController.swift in Sources */,
+				F98884D925F59D2D0049A059 /* LoginController.swift in Sources */,
 				F98884A725F56D360049A059 /* ImageSelectorController.swift in Sources */,
 				F98884C225F57D420049A059 /* TimelineCell.swift in Sources */,
 				F98884AC25F56D450049A059 /* NotificationController.swift in Sources */,
