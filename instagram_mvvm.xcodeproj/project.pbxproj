@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9810BBD25F6F6D8005E5802 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BBC25F6F6D8005E5802 /* AuthenticationViewModel.swift */; };
 		F988845D25F55ED50049A059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988845C25F55ED50049A059 /* AppDelegate.swift */; };
 		F988845F25F55ED50049A059 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988845E25F55ED50049A059 /* SceneDelegate.swift */; };
 		F988846125F55ED50049A059 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988846025F55ED50049A059 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F9810BBC25F6F6D8005E5802 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		F988845925F55ED50049A059 /* instagram_mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram_mvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988845C25F55ED50049A059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F988845E25F55ED50049A059 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		F988849425F562A80049A059 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F9810BBC25F6F6D8005E5802 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				F98884D925F59D2D0049A059 /* LoginController.swift in Sources */,
 				F98884A725F56D360049A059 /* ImageSelectorController.swift in Sources */,
 				F98884C225F57D420049A059 /* TimelineCell.swift in Sources */,
+				F9810BBD25F6F6D8005E5802 /* AuthenticationViewModel.swift in Sources */,
 				F98884AC25F56D450049A059 /* NotificationController.swift in Sources */,
 				F98884A225F56D240049A059 /* SearchController.swift in Sources */,
 				F988845D25F55ED50049A059 /* AppDelegate.swift in Sources */,

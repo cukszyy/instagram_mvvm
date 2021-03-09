@@ -2,11 +2,14 @@ import UIKit
 
 class SignUpController: UIViewController {
     
+    var viewModel = SignUpViewModel()
+    
     // MARK: - Properties
     private let addPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "add_photo"), for: .normal)
         button.tintColor = .white
+        button.addTarget(self, action: #selector(didTapAddPhoto), for: .touchUpInside)
         return button
     }()
     
@@ -49,6 +52,7 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+        configInputObservers()
     }
     
     // MARK: - Helpers
@@ -80,9 +84,62 @@ class SignUpController: UIViewController {
         signInBtn.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
     }
     
-    // MARK: - Sign In
+    func configInputObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    // MARK: - Actions
     
     @objc func didTapSignIn() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        } else if sender == fullnameTextField {
+            viewModel.fullname = sender.text
+        } else if sender == usernameTextField {
+            viewModel.username = sender.text
+        }
+        updateFormUI()
+    }
+    
+    @objc func didTapAddPhoto() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+}
+
+// MARK: - FormViewModelProtocol
+
+extension SignUpController: FormViewModelProtocol {
+    func updateFormUI() {
+        signUpBtn.backgroundColor = viewModel.buttonBackgroundColor
+        signUpBtn.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        signUpBtn.isEnabled = viewModel.formIsValid
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension SignUpController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        
+        addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
+        addPhotoButton.layer.masksToBounds = true
+        addPhotoButton.layer.borderWidth = 2
+        addPhotoButton.layer.borderColor = UIColor.black.cgColor
+        addPhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.dismiss(animated: true, completion: nil)
     }
 }
