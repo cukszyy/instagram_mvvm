@@ -2,7 +2,10 @@ import UIKit
 
 class LoginController: UIViewController {
     
+    private var viewModel = LoginViewModel()
+    
     // MARK: - Properties
+    
     private let iconImage: UIImageView = {
         let image = UIImageView(image: #imageLiteral(resourceName: "instagram_logo_white"))
         image.contentMode = .scaleAspectFill
@@ -23,6 +26,7 @@ class LoginController: UIViewController {
     private let loginBtn: UIButton = {
         let button = UIButton(type: .system)
         button.configAuthenticationButton(title: "Log In")
+        button.isEnabled = false
         return button
     }()
     
@@ -44,6 +48,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+        configInputObservers()
     }
     
     // MARK: - Helpers
@@ -79,10 +84,34 @@ class LoginController: UIViewController {
         signUpBtn.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
     }
     
+    func configInputObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
     // MARK: - Action
     
     @objc func didTapSignUp() {
         let signUpController = SignUpController()
         navigationController?.pushViewController(signUpController, animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        }
+        updateFormUI()
+    }
+}
+
+// MARK: - FormViewModelProtocol
+
+extension LoginController: FormViewModelProtocol {
+    func updateFormUI() {
+        loginBtn.backgroundColor = viewModel.buttonBackgroundColor
+        loginBtn.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        loginBtn.isEnabled = viewModel.formIsValid
     }
 }
