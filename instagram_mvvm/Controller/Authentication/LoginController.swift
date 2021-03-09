@@ -27,6 +27,7 @@ class LoginController: UIViewController {
         let button = UIButton(type: .system)
         button.configAuthenticationButton(title: "Log In")
         button.isEnabled = false
+        button.addTarget(self, action: #selector(login), for: .touchUpInside)
         return button
     }()
     
@@ -90,6 +91,18 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Action
+    
+    @objc func login() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.login(withEmail: email, withPassword: password) { (result, err) in
+            if let error = err {
+                print("Failed to log in: \(error.localizedDescription)")
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     @objc func didTapSignUp() {
         let signUpController = SignUpController()

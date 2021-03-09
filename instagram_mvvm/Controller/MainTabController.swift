@@ -1,16 +1,30 @@
 
 import UIKit
+import Firebase
 
 class MainTabController: UITabBarController {
 
-    // MARK - Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewControllers()
+        checkUserLoggedIn()
     }
     
-    // MARK - Helpers
+    // MARK: - API
+    
+    func checkUserLoggedIn() {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    // MARK: - Helpers
     
     func configViewControllers() {
         let layout = UICollectionViewFlowLayout()
