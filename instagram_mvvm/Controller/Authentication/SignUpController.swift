@@ -2,7 +2,7 @@ import UIKit
 
 class SignUpController: UIViewController {
     
-    var viewModel = SignUpViewModel()
+    private var viewModel = SignUpViewModel()
     
     // MARK: - Properties
     private let addPhotoButton: UIButton = {
@@ -37,6 +37,8 @@ class SignUpController: UIViewController {
     private let signUpBtn: UIButton = {
         let button = UIButton(type: .system)
         button.configAuthenticationButton(title: "Sign Up")
+        button.isEnabled = false
+        button.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -92,6 +94,30 @@ class SignUpController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    @objc func didTapSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
+        guard let profileImage = addPhotoButton.currentImage else { return }
+        
+        let credentials = AuthCredentials(
+            email: email,
+            password: password,
+            fullname: fullname,
+            username: username,
+            profileImage: profileImage
+        )
+        
+        AuthService.registerUser(withCredential: credentials) { err in
+            if let error = err {
+                print("Failed to register user \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     @objc func didTapSignIn() {
         navigationController?.popViewController(animated: true)

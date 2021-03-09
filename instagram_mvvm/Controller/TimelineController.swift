@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "timelineCell"
 
@@ -16,6 +17,22 @@ class TimelineController: UICollectionViewController {
     
     func configUI() {
         collectionView.backgroundColor = .white
+        navigationItem.title = "Timeline"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+        navigationItem.rightBarButtonItem?.tintColor = .secondaryLabel
+    }
+    
+    // MARK: - Actions
+    
+    @objc func logout() {
+        do {
+            try Auth.auth().signOut()
+            let nav = UINavigationController(rootViewController: LoginController())
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch {
+            print("Failed to sign out")
+        }
     }
 }
 

@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0D01541E080D5BB5CADA8A0E /* Pods_instagram_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4101ADF0656DE38E4EE63D /* Pods_instagram_mvvm.framework */; };
 		2CBEDD9CDD13CD56AB949ED5 /* Pods_instagram_mvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4605C30CC1D35202AA5FE34E /* Pods_instagram_mvvmTests.framework */; };
 		C65DFA3F83EAAD1D9455776C /* Pods_instagram_mvvm_instagram_mvvmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F74CE5940801A2D26773B98 /* Pods_instagram_mvvm_instagram_mvvmUITests.framework */; };
+		F938CE4025F719A700C441A5 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938CE3F25F719A700C441A5 /* ImageUploader.swift */; };
+		F938CE4525F719AE00C441A5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938CE4425F719AE00C441A5 /* AuthService.swift */; };
 		F9810BBD25F6F6D8005E5802 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9810BBC25F6F6D8005E5802 /* AuthenticationViewModel.swift */; };
 		F988845D25F55ED50049A059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988845C25F55ED50049A059 /* AppDelegate.swift */; };
 		F988845F25F55ED50049A059 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988845E25F55ED50049A059 /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		9A1F77DFA502557E48CDBB81 /* Pods-instagram_mvvm-instagram_mvvmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_mvvm-instagram_mvvmUITests.release.xcconfig"; path = "Target Support Files/Pods-instagram_mvvm-instagram_mvvmUITests/Pods-instagram_mvvm-instagram_mvvmUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AF4101ADF0656DE38E4EE63D /* Pods_instagram_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D263CF91FE0BEB8A3E31DB55 /* Pods-instagram_mvvmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_mvvmTests.debug.xcconfig"; path = "Target Support Files/Pods-instagram_mvvmTests/Pods-instagram_mvvmTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F938CE3F25F719A700C441A5 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		F938CE4425F719AE00C441A5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F9810BBC25F6F6D8005E5802 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		F988845925F55ED50049A059 /* instagram_mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram_mvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988845C25F55ED50049A059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +131,6 @@
 				D263CF91FE0BEB8A3E31DB55 /* Pods-instagram_mvvmTests.debug.xcconfig */,
 				7EFB2C9808105805BABF0C97 /* Pods-instagram_mvvmTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,6 +216,8 @@
 		F988849025F562890049A059 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F938CE3F25F719A700C441A5 /* ImageUploader.swift */,
+				F938CE4425F719AE00C441A5 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -516,6 +521,8 @@
 				F98884B125F56D500049A059 /* ProfileController.swift in Sources */,
 				F988849825F563E80049A059 /* MainTabController.swift in Sources */,
 				F988845F25F55ED50049A059 /* SceneDelegate.swift in Sources */,
+				F938CE4025F719A700C441A5 /* ImageUploader.swift in Sources */,
+				F938CE4525F719AE00C441A5 /* AuthService.swift in Sources */,
 				F98884C725F57E3D0049A059 /* Extensions.swift in Sources */,
 				F988849D25F56D160049A059 /* TimelineController.swift in Sources */,
 			);
